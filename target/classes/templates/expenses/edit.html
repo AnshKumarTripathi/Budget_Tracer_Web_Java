@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-header d-flex align-items-center">
+          <i class="fas fa-edit me-2"></i>
+          <h5 class="card-title mb-0">Edit Expense</h5>
+        </div>
+        <div class="card-body">
+          <form th:action="@{/expenses/update/{id}(id=${expense.id})}" th:object="${expense}" method="post">
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <input type="text" class="form-control" id="description" th:field="*{description}"
+                placeholder="Enter expense description" required>
+              <div class="text-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+            </div>
+            <div class="mb-3">
+              <label for="amount" class="form-label">Amount</label>
+              <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number" class="form-control" id="amount" th:field="*{amount}" step="0.01"
+                  placeholder="0.00" required>
+              </div>
+              <div class="text-danger" th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></div>
+            </div>
+            <div class="mb-3">
+              <label for="date" class="form-label">Date</label>
+              <input type="date" class="form-control" id="date" th:field="*{date}" required>
+              <div class="text-danger" th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
+            </div>
+            <div class="mb-3">
+              <label for="category" class="form-label">Category</label>
+              <select class="form-select" id="category" th:field="*{category}" required>
+                <option value="">Select a category</option>
+                <option value="Food">🍽️ Food</option>
+                <option value="Transportation">🚗 Transportation</option>
+                <option value="Entertainment">🎮 Entertainment</option>
+                <option value="Shopping">🛍️ Shopping</option>
+                <option value="Bills">📃 Bills</option>
+                <option value="Other">📦 Other</option>
+              </select>
+              <div class="text-danger" th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></div>
+            </div>
+            <div class="mb-3">
+              <label for="notes" class="form-label">Notes</label>
+              <textarea class="form-control" id="notes" th:field="*{notes}" rows="3"
+                placeholder="Add any additional notes"></textarea>
+            </div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save me-2"></i>Update Expense
+              </button>
+              <a href="/expenses" class="btn btn-secondary">
+                <i class="fas fa-times me-2"></i>Cancel
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

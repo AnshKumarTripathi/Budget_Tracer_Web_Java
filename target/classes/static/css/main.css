@@ -1,0 +1,204 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f0f2f5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  padding: 1rem;
+}
+
+.navbar-brand {
+  color: #ffffff !important;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* Dashboard Cards */
+.summary-card {
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(45deg, #4e54c8, #8f94fb);
+}
+
+.bg-gradient-success {
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+}
+
+.bg-gradient-info {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+}
+
+.bg-gradient-warning {
+  background: linear-gradient(45deg, #f1c40f, #f39c12);
+}
+
+/* Main Content Cards */
+.content-card {
+  background: #ffffff;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.content-card .card-header {
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+  padding: 1.5rem;
+}
+
+/* Form Elements */
+.form-control,
+.form-select {
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding: 12px;
+  transition: all 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #4e54c8;
+  box-shadow: 0 0 0 0.2rem rgba(78, 84, 200, 0.25);
+}
+
+/* Buttons */
+.btn {
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #4e54c8, #8f94fb);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #3a3f9c, #7276d6);
+  transform: translateY(-2px);
+}
+
+.btn-warning {
+  background: linear-gradient(45deg, #f1c40f, #f39c12);
+  border: none;
+  color: white;
+}
+
+.btn-danger {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  border: none;
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.table th {
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 2px solid #eee;
+  padding: 1rem;
+}
+
+.table td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+/* Category Tags */
+.category-tag {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.tag-Food {
+  background: rgba(46, 204, 113, 0.2);
+  color: #27ae60;
+}
+.tag-Transportation {
+  background: rgba(52, 152, 219, 0.2);
+  color: #2980b9;
+}
+.tag-Entertainment {
+  background: rgba(155, 89, 182, 0.2);
+  color: #8e44ad;
+}
+.tag-Shopping {
+  background: rgba(241, 196, 15, 0.2);
+  color: #f39c12;
+}
+.tag-Bills {
+  background: rgba(231, 76, 60, 0.2);
+  color: #c0392b;
+}
+.tag-Other {
+  background: rgba(149, 165, 166, 0.2);
+  color: #7f8c8d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .summary-card {
+    margin-bottom: 1rem;
+  }
+
+  .table-responsive {
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .btn {
+    padding: 8px 16px;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
